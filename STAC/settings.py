@@ -27,11 +27,14 @@ environ.Env.read_env(os.path.join(os.path.join(BASE_DIR, '.env')))
 SECRET_KEY = env('SECRET_KEY') 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["stac.iitmandi.co.in","localhost","127.0.0.1"]
 
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://stac.iitmandi.co.in',
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -139,6 +142,7 @@ STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static'), ]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
